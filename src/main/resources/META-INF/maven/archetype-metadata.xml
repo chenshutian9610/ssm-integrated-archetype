@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<archetype-descriptor>
+    <fileSets>
+        <!-- packaged 为 true 时会创建包目录 -->
+        <!-- filter 为 ture 时会被包括,且 ${package} 等变量会被解析 -->
+        <!-- ${package} 的值默认为 ${groupId} -->
+        <fileSet filtered="true" packaged="true">
+            <directory>core/src/main/java</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>**/.gitkeep</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>base/src/main/java</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>**/.gitkeep</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory></directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>base/src/main/java/**/*</exclude>
+                <exclude>core/src/main/java/**/*</exclude>
+                <exclude>**/.gitkeep</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+    <requiredProperties>
+        <!-- 数据库配置 -->
+        <requiredProperty key="db_url">
+            <defaultValue>jdbc:mysql:///demo?characterEncoding=utf-8</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="db_driver">
+            <defaultValue>com.mysql.jdbc.Driver</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="db_username">
+            <defaultValue>root</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="db_password">
+            <defaultValue>root</defaultValue>
+        </requiredProperty>
+        <!-- redis 配置 -->
+        <requiredProperty key="redis_host">
+            <defaultValue>localhost</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="redis_post">
+            <defaultValue>6379</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="redis_password">
+            <defaultValue>redis</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+</archetype-descriptor>
