@@ -9,6 +9,7 @@ mvn archetype:update-local-catalog
 # 创建项目
 mvn archetype:generate -DarchetypeCatalog=local
 ```
+<br>
 
 |可配置参数|默认值|
 |--|--|
